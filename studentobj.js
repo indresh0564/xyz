@@ -1,10 +1,25 @@
 const http = require('http');
 const server=http.createServer((req,res)=>{
-// set response content    
-   res.write('<html><body><p>My Name is Indresh Sahu.</p></body></html>');
-   console.log(req); 
-})  
-server.listen(4000);
+// set response content  
+if(req.url=='/home') 
+{
+    res.write('<html><body><p>Welcome home</p></body></html>');
+    res.end();
+}
+else if(req.url=='/about') 
+{
+    res.write('<html><body><p>Welcome to About Us page.</p></body></html>');
+    res.end();
+}
+else if(req.url=='/node')
+{
+   res.write('<html><body><p>Welcome to my Node Js project.</p></body></html>');
+   res.end(); 
+}
+   console.log(req);
+//    res.end(); 
+});
+server.listen(5000);
 // const student={
 //     name:'indresh',
 //     age:23,
