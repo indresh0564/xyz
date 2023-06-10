@@ -3,6 +3,7 @@ const fs = require('fs');
  const body=[];
 const server=http.createServer((req,res)=>{
     const url=req.url;
+    //noooob
     const method = req.method;
     if(url==='/'){
         fs.readFile("message.txt",{encoding:"utf-8"},(err,data)=>{
