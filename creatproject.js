@@ -5,7 +5,7 @@ const creatproject=express();
 creatproject.use(bodyparser.urlencoded({extended:false}))
 
 creatproject.use('/add-product',(req,res,next)=>{
-    res.send('<form action ="/product" method="POST"><input type="text"  name="title"><button type ="submite">add product</button></form>');
+    res.send('<form action ="/product" method="POST"><input type="text"  name="title"><input type="number"  name="size"><button type ="submite">add product</button></form>');
 });
 creatproject.post('/product',(req,res,next)=>{
     console.log(req.body);
