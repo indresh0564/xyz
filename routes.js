@@ -8,7 +8,7 @@ if(url==='/'){
         if(err){
             console.log(err);
         }
-        //..
+        //...
     console.log('data from file'+data);
     res.write('<html>');
     res.write('<head><title>enter massage</title></head>');
