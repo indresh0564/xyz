@@ -10,6 +10,7 @@ const server=http.createServer((req,res)=>{
         res.write('</html>');
         return res.end(); 
     }
+    //ddd
      if(url === '/message' && method === 'POST'){  
         const body=[];
         req.on('data',(chunk)=>{
@@ -22,6 +23,9 @@ const server=http.createServer((req,res)=>{
            const message=parsbody.split('=')[1];
                fs.writeFileSync('message.txt', message);
        });
+    //sss
+    //dgd
+    //sdfsdf
        res.statusCode=302;
      res.setHeader('Location','/');
      return res.end();
