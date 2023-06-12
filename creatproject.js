@@ -1,20 +1,18 @@
 const http = require('http');
 const express = require('express');
-// const routes = require('./routes');
-// const reqHandler = require('./routes');
-// console.log(routes.sometext);
-const creatproject =express();
-//middle ware --1
-creatproject.use((req,res,next)=>{
-    console.log("I In The Middle Ware");
-    next();//allow the request to continue the next middle ware in line 
+const bodyparser=require('body-parser');
+const creatproject=express();
+creatproject.use(bodyparser.urlencoded({extended:false}))
+
+creatproject.use('/add-product',(req,res,next)=>{
+    res.send('<form action ="/product" method="POST"><input type="text"  name="title"><input type="number"  name="size"><button type ="submite">add product</button></form>');
 });
-//middle ware --2.....xddfx
-creatproject.use((req,res,next)=>{
-    console.log("I In The Another Middle Ware");
-    res.send('<h1>Hello Frome Express.js</h1>');
-    res.send( { key1: value });
+creatproject.post('/product',(req,res,next)=>{
+    console.log(req.body);
+    res.redirect('/')
 });
-// const server=http.createServer(creatproject);
-// server.listen(3000);
+creatproject.use('/',(req,res,next)=>{
+    res.send('<h1>Welcome Express.js</h1>');
+});
 creatproject.listen(3000);
+//...
