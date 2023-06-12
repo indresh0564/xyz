@@ -1,14 +1,17 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const app=express();
+const chatroutes = require('./group_chat/chat');
+const adminroutes = require('./group_chat/admin');
 
-const adminroutes = require('./routes1/admin.js');
-const shoproutes = require('./routes1/shop.js');
+const app = express();
 
-app.use(bodyparser.urlencoded({extended:false}))
-app.use('/admin',adminroutes);
-app.use(shoproutes);
+app.use(bodyparser.urlencoded({extended:false}));
+
+app.use(chatroutes);
+app.use(adminroutes);
+
 app.use((req,res,next)=>{
-res.status(404).send('<h1>Page not found</h1>');
+res.status(404).send('<h1>Page Not Found</h1>');
 });
+
 app.listen(3000);
