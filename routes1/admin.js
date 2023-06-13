@@ -1,20 +1,15 @@
-const { log } = require('console');
 const express=require('express');
 const path = require('path');
 
 const router=express.Router();
+const productcontroller=require('../controller/controlproduct')
 
-    router.get('/add-product',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'..','view','admin.html'));
-    });
+    router.get('/add-product',productcontroller.getaddproduct);
 
-    router.get('/contact_us',(req,res,next)=>{
-    res.sendFile(path.join(__dirname,'..','view','contactus.html'));
-    });
+    router.get('/contact_us',productcontroller.getcontactus);
 
-    router.post('/add-product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/add-product');
-    });
+    router.post('/succes',productcontroller.succes);
+
+    // router.post('/add-product',productcontroller.redirect_addproduct);
 
 module.exports=router;
