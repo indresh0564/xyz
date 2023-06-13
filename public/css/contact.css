@@ -50,7 +50,6 @@ main {
 .form-control input {
    border: 1px solid;
    font: inherit;
-   width: max-content;
    border-radius: 2px;
 }
 .product-form {
