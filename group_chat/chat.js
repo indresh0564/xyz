@@ -6,7 +6,6 @@ res.send('<h1>login_user</h1><form onsubmit="localStorage.setItem(`username`, us
 });
 
 router.post('/login_user',(req,res,next)=>{
-console.log(req.body);
 res.redirect("/chat");
 });
 

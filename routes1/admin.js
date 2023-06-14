@@ -10,6 +10,6 @@ const productcontroller=require('../controller/controlproduct')
 
     router.post('/succes',productcontroller.succes);
 
-    // router.post('/add-product',productcontroller.redirect_addproduct);
-
+    router.post('/post_addproduct',productcontroller.post_addproduct);
+    
 module.exports=router;
